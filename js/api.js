@@ -1,9 +1,12 @@
-import  Book from "./js/book.js";
+import Book from './book.js'
 
-export const fetchBooks=async ()=>{
-const res=await fetch("https://openlibrary.org/search.json?q=javascript");
+export  const fetchBooks=async (title)=>{
+    if(!title) return null;
+const res=await fetch("https://openlibrary.org/search.json?q="+title);
 const data= await res.json();
 
-console.log(data.docs)
-const books=data.docs.map(d=>new Book(d.author_name,d.))
+// console.log(data.docs)
+const books=data.docs.map(d=>new Book(d.author_name,d.first_publish_year,d.language,d.title))
+// console.log(books)
+return books;
 }
