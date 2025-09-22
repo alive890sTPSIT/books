@@ -1,4 +1,3 @@
-import  Book from "./js/book.js";
 
 export const renderBook=(books)=>{
     const c = document.getElementById('book-list');
