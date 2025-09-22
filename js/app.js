@@ -1,0 +1,1 @@
+fetch("https://openlibrary.org/search.json?q=javascript").then(RES=>RES.json()).then(data=>console.log(data))
