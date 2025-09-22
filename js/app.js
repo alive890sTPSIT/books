@@ -1,8 +1,5 @@
-export const fetchBooks=async ()=>{
-    const res=await fetch("https://openlibrary.org/search.json?q=javascript");
-    const data= await res.json();
-    
-    console.log(data.docs)
-    }
-
-    fetchBooks();
+import { fetchBooks } from './api.js'
+window.onload = async () => {
+    const form=document.getElementById("search-form");
+    console.log(form["search-input"].value)
+}
