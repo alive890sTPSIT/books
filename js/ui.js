@@ -9,13 +9,14 @@ export const renderBook=(books)=>{
     //ciclo su ogni ora disponibile
     for (let i = 0; i < books.length; i++) {
         //estraffo solo l orario dalla stringa ISO 8601
+        const book = books[i];
         cards += /*html*/`<div  class="col">
         <div class="card shadow-sm h-100 text-center">
             <div class="card-body">
-                <h5 class="card-title">${books[i].title}</h5>
-                <p class="card-text">Autori: ${   books[i].autori} </p>
-                <p class="card-text">Anno: ${          books[i].year} </p>
-                <p class="card-text">Language:${books[i].language}  </p>
+                <h5 class="card-title">${           book.title}</h5>
+                <p class="card-text">Autori: ${     book.autori.join(', ')} </p>
+            <p class="card-text">Anno: ${           book.year} </p>
+                <p class="card-text">Language: [${    book.language.join(', ')}]  </p>
             </div>
         </div>
     </div>`;

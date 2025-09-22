@@ -2,7 +2,8 @@ import Book from './book.js'
 
 export  const fetchBooks=async (title)=>{
     if(!title) return null;
-const res=await fetch("https://openlibrary.org/search.json?q="+title);
+    console.log(title)
+const res=await fetch("https://openlibrary.org/search.json?title="+encodeURIComponent(title));
 const data= await res.json();
 
 // console.log(data.docs)
